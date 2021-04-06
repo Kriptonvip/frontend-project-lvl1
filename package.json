@@ -2,10 +2,10 @@
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
   "description": "Ferst project brainGames",
-  "type":"module",
+  "type": "module",
   "bin": {
-  "brain-games": "bin/brain-games.js"
-},
+    "brain-games": "bin/brain-games.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/Kriptonvip/frontend-project-lvl1/issues"
   },
-  "homepage": "https://github.com/Kriptonvip/frontend-project-lvl1#readme"
+  "homepage": "https://github.com/Kriptonvip/frontend-project-lvl1#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
