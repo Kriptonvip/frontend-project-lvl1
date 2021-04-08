@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName } from './cli.js';
+import { userName } from '../cli.js';
 
 let count = 0;
 const quest = () => {

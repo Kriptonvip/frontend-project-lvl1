@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import even from '../src/games/even.js';
+import calc from '../src/games/calc.js';
 import { userNameAlert } from '../src/cli.js';
 
 userNameAlert();
-even();
+calc();
