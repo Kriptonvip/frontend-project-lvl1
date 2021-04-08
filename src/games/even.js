@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 import { userName } from '../cli.js';
 
 let count = 0;
-const quest = () => {
+const game = () => {
   const num = Math.floor(Math.random() * 100);
   console.log(`Question: ${num}`);
   const answer = readlineSync.question('Your answer: ');
@@ -14,7 +14,7 @@ const quest = () => {
     console.log('Correct!');
     count += 1;
     if (count !== 3) {
-      return quest();
+      return game();
     }
     return console.log(`Congratulations ${userName}!`);
   }
@@ -23,6 +23,6 @@ const quest = () => {
 };
 const even = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  quest();
+  game();
 };
 export default even;
