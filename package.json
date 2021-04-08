@@ -1,7 +1,7 @@
 {
   "name": "frontend-project-lvl1",
   "version": "1.0.0",
-  "description": "Ferst project brainGames",
+  "description": "First project brainGames",
   "type": "module",
   "bin": {
     "brain-games": "bin/brain-games.js",
