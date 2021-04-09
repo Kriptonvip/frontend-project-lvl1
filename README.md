@@ -6,4 +6,8 @@
 
 <img src="https://github.com/Kriptonvip/frontend-project-lvl1/actions/workflows/gitactions.yml/badge.svg"
 
-<a href="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" /></a>
+<a href="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" /> Game even</a>
+
+<a href="https://asciinema.org/a/wxSO5tmSQq7TgzkL6dqoNgA9s" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" />Game calc</a>
+
+<a href="https://asciinema.org/a/qfWWGCb7fdkwFzMiSDbIs7Um2" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" />Game gcd</a>
