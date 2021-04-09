@@ -20,7 +20,7 @@ const progression = () => {
   console.log('What number is missing in the progression?');
   const x = Math.floor(Math.random() * 5) + 1;
   const correctAnswer = arr[x];
-  arr[x] = '. .';
+  arr[x] = '..';
   console.log(arr.join(' '));
   let answer = readlineSync.question('Your answer: ');
   answer = Number(answer);
