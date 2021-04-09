@@ -3,6 +3,9 @@ import { userName } from '../cli.js';
 
 let count = 0;
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
   for (let i = 2; i < num; i += 1) {
     if (num % i === 0) {
       return false;
@@ -13,7 +16,7 @@ const isPrime = (num) => {
 const prime = () => {
   //  game logic start
   console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
-  const num = 1 + Math.floor(Math.random() * 21);
+  const num = Math.floor(Math.random() * 21);
   console.log(`Question: ${num}`);
   const answer = readlineSync.question('Your answer: ');
   let correctAnswer = 'no';
