@@ -14,7 +14,7 @@ const gcd = () => {
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100);
   console.log('Find the greatest common divisor of given numbers.');
-  console.log(`${num1} ${num2}`);
+  console.log(`Question: ${num1} ${num2}`);
   let answer = readlineSync.question('Your answer: ');
   const correctAnswer = gcdiv(num1, num2);
   answer = Number(answer);
