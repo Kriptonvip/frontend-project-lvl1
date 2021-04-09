@@ -10,10 +10,9 @@ const gcdiv = (num1, num2) => {
   return gcdiv(num2, num1 % num2);
 };
 
-const game = () => {
+const gcd = () => {
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100);
-
   console.log('Find the greatest common divisor of given numbers.');
   console.log(`${num1} ${num2}`);
   let answer = readlineSync.question('Your answer: ');
@@ -23,7 +22,7 @@ const game = () => {
     console.log('Correct!');
     count += 1;
     if (count !== 3) {
-      return game();
+      return gcd();
     }
     return console.log(`Congratulations ${userName}!`);
   }
@@ -31,8 +30,4 @@ const game = () => {
   return console.log(`Let's try again, ${userName}!`);
 };
 
-const gcd = () => {
-  console.log('What is the result of the expression?');
-  game();
-};
 export default gcd;

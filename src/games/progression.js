@@ -12,8 +12,8 @@ const progressionGen = (length, diff) => {
   return arr;
 };
 
-const game = () => {
-  // game logic
+const progression = () => {
+  //  game logic start
   const length = 5 + Math.floor(Math.random() * 5);
   const diff = 1 + Math.floor(Math.random() * 5);
   const arr = progressionGen(length, diff);
@@ -24,12 +24,12 @@ const game = () => {
   console.log(arr.join(' '));
   let answer = readlineSync.question('Your answer: ');
   answer = Number(answer);
-  // game logic
+  // game logic end
   if (answer === correctAnswer) {
     console.log('Correct!');
     count += 1;
     if (count !== 3) {
-      return game();
+      return progression();
     }
     return console.log(`Congratulations ${userName}!`);
   }
@@ -37,8 +37,4 @@ const game = () => {
   return console.log(`Let's try again, ${userName}!`);
 };
 
-const progression = () => {
-  console.log('What is the result of the expression?');
-  game();
-};
 export default progression;
