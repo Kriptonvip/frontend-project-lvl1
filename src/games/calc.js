@@ -48,7 +48,7 @@ const calc = () => {
     if (count !== 3) {
       return calc();
     }
-    return console.log(`Congratulations ${userName}!`);
+    return console.log(`Congratulations, ${userName}!`);
   }
   console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
   return console.log(`Let's try again, ${userName}!`);
