@@ -11,3 +11,5 @@
 <a href="https://asciinema.org/a/wxSO5tmSQq7TgzkL6dqoNgA9s" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" />Game calc</a>
 
 <a href="https://asciinema.org/a/qfWWGCb7fdkwFzMiSDbIs7Um2" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" />Game gcd</a>
+
+<a href="https://asciinema.org/a/g2zqmz0iE5ScvSNKpt00Lxm6i" target="_blank"><img src="https://asciinema.org/a/fOJUNpE4kjerETvmhOKhchH77.svg" />Game progression</a>

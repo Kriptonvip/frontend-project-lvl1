@@ -25,8 +25,16 @@ const game = () => {
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100);
   let oper = Math.floor(Math.random() * 3);
-  oper = (oper === 0) ? oper = '+' : oper === 1 ? oper = '-' : oper === 2 ? oper = '*' : oper = null;
-
+  // мне кажется лаконичнее одной строкой с тернарным оператором,
+  // но eslint ругается поэтому сделал через if else
+  // oper = (oper === 0) ? oper = '+' : oper === 1 ? oper = '-' : oper === 2 ? oper = '*' :
+  // oper = null;
+  if (oper === 0) {
+    oper = '+';
+  } else if (oper === 1) {
+    oper = '-';
+  }
+  oper = '*';
   console.log(`Question: ${num1} ${oper} ${num2}`);
   let answer = readlineSync.question('Your answer: ');
   const correctAnswer = operand(num1, num2, oper);
