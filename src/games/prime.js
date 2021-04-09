@@ -12,6 +12,7 @@ const isPrime = (num) => {
 };
 const prime = () => {
   //  game logic start
+  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const num = 1 + Math.floor(Math.random() * 21);
   console.log(`Question: ${num}`);
   const answer = readlineSync.question('Your answer: ');
