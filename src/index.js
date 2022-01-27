@@ -1,17 +1,18 @@
 import readlineSync from 'readline-sync';
 
-const userName = readlineSync.question('May I have your name? ');
+const userName = () => readlineSync.question('May I have your name? ');
+
 const userNameAlert = () => {
   console.log('Welcome to the Brain Games');
-  console.log(`Hello, ${userName}!`);
+  console.log(`Hello, ${userName()}!`);
 };
 
 const congrat = () => {
-  console.log(`Congratulations, ${userName}!`);
+  console.log(`Congratulations, ${userName()}!`);
 };
 
 const tryAgain = () => {
-  console.error(`Let's try again, ${userName}!`);
+  console.error(`Let's try again, ${userName()}!`);
 };
 
 const wrongAnswer = (answer, correctAnswer) => {
