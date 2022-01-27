@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
+import { correct } from '../index.js';
 
 let count = 0;
 const isPrime = (num) => {
@@ -24,16 +24,7 @@ const prime = () => {
     correctAnswer = 'yes';
   }
   //  game logic end
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    count += 1;
-    if (count !== 3) {
-      return prime();
-    }
-    return console.log(`Congratulations, ${userName}!`);
-  }
-  console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  return console.log(`Let's try again, ${userName}!`);
+  return correct(answer, correctAnswer);
 };
 
 export default prime;

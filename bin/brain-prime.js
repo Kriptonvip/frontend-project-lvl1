@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import prime from '../src/games/prime.js';
-import { userNameAlert } from '../src/cli.js';
+import { game } from '../src/index.js';
 
-userNameAlert();
-prime();
+game(prime);

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import gcd from '../src/games/gcd.js';
-import { userNameAlert } from '../src/cli.js';
+import { game } from '../src/index.js';
 
-userNameAlert();
-gcd();
+game(gcd);

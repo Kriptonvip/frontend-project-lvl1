@@ -1,7 +1,5 @@
 import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
-
-let count = 0;
+import { correct } from '../index.js';
 
 const gcdiv = (num1, num2) => {
   if (num2 === 0) {
@@ -9,7 +7,7 @@ const gcdiv = (num1, num2) => {
   }
   return gcdiv(num2, num1 % num2);
 };
-
+// game logic start
 const gcd = () => {
   const num1 = Math.floor(Math.random() * 100);
   const num2 = Math.floor(Math.random() * 100);
@@ -18,16 +16,8 @@ const gcd = () => {
   let answer = readlineSync.question('Your answer: ');
   const correctAnswer = gcdiv(num1, num2);
   answer = Number(answer);
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    count += 1;
-    if (count !== 3) {
-      return gcd();
-    }
-    return console.log(`Congratulations, ${userName}!`);
-  }
-  console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  return console.log(`Let's try again, ${userName}!`);
+  // game logic end
+  return correct(answer, correctAnswer);
 };
 
 export default gcd;

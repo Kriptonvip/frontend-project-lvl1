@@ -1,7 +1,6 @@
 import readlineSync from 'readline-sync';
-import { userName } from '../cli.js';
+import { correct } from '../index.js';
 
-let count = 0;
 const progressionGen = (length, diff) => {
   const arr = [];
   let num = 0;
@@ -25,16 +24,7 @@ const progression = () => {
   let answer = readlineSync.question('Your answer: ');
   answer = Number(answer);
   // game logic end
-  if (answer === correctAnswer) {
-    console.log('Correct!');
-    count += 1;
-    if (count !== 3) {
-      return progression();
-    }
-    return console.log(`Congratulations, ${userName}!`);
-  }
-  console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
-  return console.log(`Let's try again, ${userName}!`);
+  return correct(answer, correctAnswer);
 };
 
 export default progression;
