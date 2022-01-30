@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import { userNameAlert } from '../src/index.js';
+import { userNameAlert, welcome } from '../src/cli.js';
 
+welcome();
 userNameAlert();

@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { correct } from '../index.js';
+import { correct, yourAnswer, congrat } from '../index.js';
+import randomNum from '../utils.js';
 
 const operand = (num1, num2, oper) => {
   let result;
@@ -19,18 +19,21 @@ const operand = (num1, num2, oper) => {
   return result;
 };
   // game logic start
-const calc = () => {
+const calc = (count) => {
+  if (count === 3) {
+    return congrat();
+  }
   console.log('What is the result of the expression?');
-  const num1 = Math.floor(Math.random() * 100);
-  const num2 = Math.floor(Math.random() * 100);
-  const index = Math.floor(Math.random() * 3);
+  const num1 = randomNum(100);
+  const num2 = randomNum(100);
+  const index = randomNum(3);
   const oper = ['+', '-', '*'];
   console.log(`Question: ${num1} ${oper[index]} ${num2}`);
-  let answer = readlineSync.question('Your answer: ');
+  let answer = yourAnswer();
   const correctAnswer = operand(num1, num2, oper[index]);
   answer = Number(answer);
   //  game logic end
-  return correct(answer, correctAnswer);
+  return correct(answer, correctAnswer, calc, count);
 };
 
 export default calc;

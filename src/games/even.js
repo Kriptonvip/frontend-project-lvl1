@@ -1,15 +1,15 @@
-import readlineSync from 'readline-sync';
-import { correct } from '../index.js';
+import { correct, yourAnswer, congrat } from '../index.js';
+import randomNum from '../utils.js';
 
-const even = () => {
-  console.log('Answer "yes" if the number is even, otherwise answer "no"');
-  const num = Math.floor(Math.random() * 100);
-  console.log(`Question: ${num}`);
-  const answer = readlineSync.question('Your answer: ');
-  let correctAnswer = 'no';
-  if (num % 2 === 0) {
-    correctAnswer = 'yes';
+const even = (count) => {
+  if (count === 3) {
+    return congrat();
   }
-  return correct(answer, correctAnswer);
+  console.log('Answer "yes" if the number is even, otherwise answer "no"');
+  const num = randomNum(100);
+  console.log(`Question: ${num}`);
+  const answer = yourAnswer();
+  const correctAnswer = (num % 2 === 0) ? 'yes' : 'no';
+  return correct(answer, correctAnswer, even, count);
 };
 export default even;

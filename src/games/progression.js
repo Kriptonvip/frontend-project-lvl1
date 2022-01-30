@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { correct } from '../index.js';
+import { correct, yourAnswer, congrat } from '../index.js';
+import randomNum from '../utils.js';
 
 const progressionGen = (length, diff) => {
   const arr = [];
@@ -11,20 +11,23 @@ const progressionGen = (length, diff) => {
   return arr;
 };
 
-const progression = () => {
+const progression = (count) => {
+  if (count === 3) {
+    return congrat();
+  }
   //  game logic start
-  const length = 5 + Math.floor(Math.random() * 5);
-  const diff = 1 + Math.floor(Math.random() * 5);
+  const length = 5 + randomNum(5);
+  const diff = 1 + randomNum(5);
   const arr = progressionGen(length, diff);
   console.log('What number is missing in the progression?');
-  const x = Math.floor(Math.random() * 5) + 1;
+  const x = 1 + randomNum(5);
   const correctAnswer = arr[x];
   arr[x] = '..';
   console.log(`Question: ${arr.join(' ')}`);
-  let answer = readlineSync.question('Your answer: ');
+  let answer = yourAnswer();
   answer = Number(answer);
   // game logic end
-  return correct(answer, correctAnswer);
+  return correct(answer, correctAnswer, progression, count);
 };
 
 export default progression;

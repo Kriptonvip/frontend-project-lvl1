@@ -1,5 +1,5 @@
-import readlineSync from 'readline-sync';
-import { correct } from '../index.js';
+import { correct, yourAnswer, congrat } from '../index.js';
+import randomNum from '../utils.js';
 
 const gcdiv = (num1, num2) => {
   if (num2 === 0) {
@@ -8,16 +8,19 @@ const gcdiv = (num1, num2) => {
   return gcdiv(num2, num1 % num2);
 };
 // game logic start
-const gcd = () => {
-  const num1 = Math.floor(Math.random() * 100);
-  const num2 = Math.floor(Math.random() * 100);
+const gcd = (count) => {
+  if (count === 3) {
+    return congrat();
+  }
+  const num1 = randomNum(100);
+  const num2 = randomNum(100);
   console.log('Find the greatest common divisor of given numbers.');
   console.log(`Question: ${num1} ${num2}`);
-  let answer = readlineSync.question('Your answer: ');
+  let answer = yourAnswer();
   const correctAnswer = gcdiv(num1, num2);
   answer = Number(answer);
   // game logic end
-  return correct(answer, correctAnswer);
+  return correct(answer, correctAnswer, gcd, count);
 };
 
 export default gcd;

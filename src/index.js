@@ -1,12 +1,9 @@
 import readlineSync from 'readline-sync';
+import { welcome, userNameAlert, userName } from './cli.js';
 
-console.log('Welcome to the Brain Games!');
-
-const userName = readlineSync.question('May I have your name? ');
-
-const userNameAlert = () => {
-  console.log(`Hello, ${userName}!`);
-};
+// не совсем понимаю почему эти две функции запускаются, и что их вызывает
+welcome();
+userNameAlert();
 
 const congrat = () => {
   console.log(`Congratulations, ${userName}!`);
@@ -19,28 +16,23 @@ const tryAgain = () => {
 const wrongAnswer = (answer, correctAnswer) => {
   console.log(`${answer} is wrong answer ;(. Correct answer was ${correctAnswer}.`);
 };
-
-const correct = (answer, correctAnswer) => {
+// мне не нравится это решение, но другого я не нашёл
+// есть вариант все эти функции экспортировать и вызывать в исполняемых фаилах игр,
+// но это ещё хуже мне кажется, если можно все написать в одном месте то лучше не дублировать код.
+const correct = (answer, correctAnswer, func, count = 0) => {
   if (answer === correctAnswer) {
     console.log('Correct!');
+    const i = count + 1;
+    func(i);
     return true;
   }
   wrongAnswer(answer, correctAnswer);
-  return false;
+  return tryAgain();
 };
-
-const game = (func) => {
-  userNameAlert();
-  for (let i = 0; i < 3; i += 1) {
-    if (!func()) {
-      return tryAgain();
-    }
-  }
-  return congrat();
-};
+const yourAnswer = () => readlineSync.question('Your answer: ');
 
 export {
-  game,
   correct,
-  userNameAlert,
+  yourAnswer,
+  congrat,
 };
