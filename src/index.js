@@ -1,5 +1,15 @@
 import readlineSync from 'readline-sync';
-import userName from './cli.js';
+
+const welcome = () => {
+  console.log('Welcome to the Brain Games!');
+  const name = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${name}!`);
+  return name;
+};
+
+// тут из-за инициализации переменной, запускается функция приветствия и задаётся userName
+// я догадываюсь что это не правильно, или так можно делать?
+const userName = welcome();
 
 const congrat = () => {
   console.log(`Congratulations, ${userName}!`);
@@ -19,7 +29,6 @@ const correct = (answer, correctAnswer, func, countOfTryes = 0) => {
     if (countOfTryes === 2) {
       return congrat();
     }
-    console.log(countOfTryes);
     const i = countOfTryes + 1;
     func(i);
     return true;
