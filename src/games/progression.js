@@ -1,5 +1,7 @@
-import { correct, yourAnswer } from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
+
+const gameRules = () => console.log('What number is missing in the progression?');
 
 const progressionGen = (length, diff) => {
   const arr = [];
@@ -11,22 +13,20 @@ const progressionGen = (length, diff) => {
   return arr;
 };
 
-const progression = (countOfTryes) => {
+const progression = () => {
   //  game logic start
-  const minLength = 5;
-  const minStep = 1;
-  const length = minLength + randomNum(5);
-  const diff = minStep + randomNum(5);
+  const length = randomNum(5, 5);
+  const diff = randomNum(5, 1);
   const arr = progressionGen(length, diff);
-  console.log('What number is missing in the progression?');
-  const x = minStep + randomNum(5);
-  const correctAnswer = arr[x];
+  const x = randomNum(5, 1);
+  let correctAnswer = arr[x];
+  correctAnswer = String(correctAnswer);
   arr[x] = '..';
   console.log(`Question: ${arr.join(' ')}`);
-  let answer = yourAnswer();
-  answer = Number(answer);
   // game logic end
-  return correct(answer, correctAnswer, progression, countOfTryes);
+  return correctAnswer;
 };
 
-export default progression;
+const gameStart = () => game(progression, gameRules);
+
+export default gameStart;

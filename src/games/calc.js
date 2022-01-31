@@ -1,5 +1,7 @@
-import { correct, yourAnswer } from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
+
+const gameRules = () => console.log('What is the result of the expression?');
 
 const operand = (num1, num2, oper) => {
   let result;
@@ -19,18 +21,17 @@ const operand = (num1, num2, oper) => {
   return result;
 };
   // game logic start
-const calc = (countOfTryes) => {
-  console.log('What is the result of the expression?');
+const calc = () => {
   const num1 = randomNum(100);
   const num2 = randomNum(100);
   const index = randomNum(3);
   const oper = ['+', '-', '*'];
   console.log(`Question: ${num1} ${oper[index]} ${num2}`);
-  let answer = yourAnswer();
-  const correctAnswer = operand(num1, num2, oper[index]);
-  answer = Number(answer);
+  let correctAnswer = operand(num1, num2, oper[index]);
+  correctAnswer = String(correctAnswer);
   //  game logic end
-  return correct(answer, correctAnswer, calc, countOfTryes);
+  return correctAnswer;
 };
+const gameStart = () => game(calc, gameRules);
 
-export default calc;
+export default gameStart;

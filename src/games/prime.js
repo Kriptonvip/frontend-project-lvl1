@@ -1,5 +1,7 @@
-import { correct, yourAnswer } from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
+
+const gameRules = () => console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -12,15 +14,15 @@ const isPrime = (num) => {
   }
   return true;
 };
-const prime = (countOfTryes) => {
+const prime = () => {
   //  game logic start
-  console.log('Answer "yes" if given number is prime. Otherwise answer "no".');
   const num = randomNum(21);
   console.log(`Question: ${num}`);
-  const answer = yourAnswer();
   const correctAnswer = (isPrime(num)) ? 'yes' : 'no';
   //  game logic end
-  return correct(answer, correctAnswer, prime, countOfTryes);
+  return correctAnswer;
 };
 
-export default prime;
+const gameStart = () => game(prime, gameRules);
+
+export default gameStart;

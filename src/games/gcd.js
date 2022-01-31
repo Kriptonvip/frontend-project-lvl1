@@ -1,5 +1,7 @@
-import { correct, yourAnswer } from '../index.js';
+import game from '../index.js';
 import randomNum from '../utils.js';
+
+const gameRules = () => console.log('Find the greatest common divisor of given numbers.');
 
 const gcdiv = (num1, num2) => {
   if (num2 === 0) {
@@ -8,16 +10,15 @@ const gcdiv = (num1, num2) => {
   return gcdiv(num2, num1 % num2);
 };
 // game logic start
-const gcd = (countOfTryes) => {
+const gcd = () => {
   const num1 = randomNum(100);
   const num2 = randomNum(100);
-  console.log('Find the greatest common divisor of given numbers.');
   console.log(`Question: ${num1} ${num2}`);
-  let answer = yourAnswer();
-  const correctAnswer = gcdiv(num1, num2);
-  answer = Number(answer);
+  let correctAnswer = gcdiv(num1, num2);
+  correctAnswer = String(correctAnswer);
   // game logic end
-  return correct(answer, correctAnswer, gcd, countOfTryes);
+  return correctAnswer;
 };
 
-export default gcd;
+const gameStart = () => game(gcd, gameRules);
+export default gameStart;
